@@ -3,36 +3,12 @@ pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-
-contract AYNFT  {
-    uint tokenID = 0;
-    address selfAddress;
-   constructor(){
-      selfAddress = address(this);
+// import "@openzeppelin/con"
+contract AYNFT is ERC721 {
+   uint256 tokenId = 0;
+   constructor() ERC721("AYNFT","ANT"){}
+   function mint(address _to) public{
+      _safeMint(_to, tokenId);
+      tokenId = tokenId + 1;
    }
-//    function balanceOf(address owner) public view override returns (uint256 balance) {
-//       require(owner != address(0), "Please enter a valid address");
-//       return owner.balance;
-//    } 
-//    function ownerOf(uint256 tokenId) public view override returns (address owner) {
-
-//    }
-//    function approve(address to, uint256 tokenId) public override {
-
-//    }
-//    function transferFrom(address from, address to, uint256 tokenId) public override {
-
-//    }
-//     function safeTransferFrom(address from, address to, uint256 tokenId) public override {
-    
-//     }
-//     function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public override {
-    
-//     }
-//     function setApprovalForAll(address operator, bool approved) public override {
-    
-//     }
-//     function getApproved(uint256 tokenId) public view override returns (address operator) {
-    
-//     }
 }
